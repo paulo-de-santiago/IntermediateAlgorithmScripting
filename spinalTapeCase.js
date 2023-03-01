@@ -4,7 +4,9 @@ Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-da
  */
 
 function spinalCase(str) {
+  //add a white space between lower case and capitals
   let lower = str.replace(/([a-z])([A-Z])/g, "$1 $2");
+
   return lower
     .toLowerCase()
     .split(/(?:_| )+/)
