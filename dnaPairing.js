@@ -10,7 +10,25 @@ The character and its pair are paired up in an array, and all the arrays are gro
  */
 
 function pairElement(str) {
-  return str;
+  console.log(str);
+  let pairedArray = [];
+  console.log(pairedArray);
+
+  function pairCheck(letter) {
+    if (letter === "A") {
+      return "T";
+    } else if (letter === "T") {
+      return "A";
+    } else if (letter === "C") {
+      return "G";
+    } else if (letter === "G") {
+      return "C";
+    }
+  }
+
+  for (let letter of str) pairedArray.push([letter, pairCheck(letter)]);
+
+  return pairedArray;
 }
 
 // tests
@@ -32,6 +50,20 @@ Problem Explanation
     The number of elements in the final output equals the number of characters in the input.
 
 This problem does not involve rearranging the input into different combinations or permutations.
+
+
+Hint 1
+
+    There are two pairs of values, A-T and C-G.
+
+Hint 2
+
+    A switch would be a natural option here, because each character in the string has 4 possible values.
+
+Hint 3
+
+    The result must be an array of arrays.
+
 
 
 */
