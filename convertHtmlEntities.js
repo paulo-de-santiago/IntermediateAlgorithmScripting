@@ -7,7 +7,18 @@ Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a strin
 */
 
 function convertHTML(str) {
-  return str;
+  const htmlEntities = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&apos;",
+  };
+
+  return str
+    .split("")
+    .map((entity) => htmlEntities[entity] || entity)
+    .join("");
 }
 
 /* Tests */
@@ -19,3 +30,23 @@ console.log(convertHTML('Stuff in "quotation marks"')); // should return the str
 console.log(convertHTML("Schindler's List")); // should return the string Schindler&apos;s List.
 console.log(convertHTML("<>")); // should return the string &lt;&gt;.
 console.log(convertHTML("abc")); // should return the string abc.
+
+/* Solution 2
+function convertHTML(str) {
+  // Use Object Lookup to declare as many HTML entities as needed.
+  const htmlEntities = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&apos;"
+  };
+  // Using a regex, replace characters with it's corresponding html entity
+  return str.replace(/([&<>\"'])/g, match => htmlEntities[match]);
+}
+
+// test here
+convertHTML("Dolce & Gabbana");
+
+
+*/
