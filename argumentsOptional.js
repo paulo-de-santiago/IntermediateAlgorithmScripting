@@ -48,7 +48,7 @@ function addTogether() {
 }
 
 /* Tests */
-
+/* 
 console.log(addTogether(2, 3)); // should return 5.
 console.log(addTogether(23, 30)); // should return 53.
 
@@ -57,7 +57,7 @@ console.log(addTogether("https://www.youtube.com/watch?v=dQw4w9WgXcQ")); // shou
 console.log(addTogether(2, "3")); // should return undefined.
 console.log(addTogether(2)([3])); // should return undefined.
 console.log(addTogether("2", 3)); // should return undefined.
-console.log(addTogether(5, undefined)); // should return undefined.
+console.log(addTogether(5, undefined)); // should return undefined. */
 
 /* 
 Problem Explanation
